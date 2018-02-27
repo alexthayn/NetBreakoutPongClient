@@ -21,7 +21,8 @@ namespace NetBreakoutPongClient
     public partial class MainWindow : Window
     {
         private ClassicPongGameData gameData = new ClassicPongGameData();
-        private Driver driver = new Driver();
+        //private Driver driver = new Driver();
+        private GameServer server = new GameServer();
 
         private Boolean leftKeyPressed = false;
         private Boolean rightKeyPressed = false;
