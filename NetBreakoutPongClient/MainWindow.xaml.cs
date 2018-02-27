@@ -34,13 +34,23 @@ namespace NetBreakoutPongClient
         public MainWindow()
         {
             InitializeComponent();
-            //this.KeyDown += new KeyEventHandler(OnButtonKeyDown);
 
+            gameData = server.GetData();
+            this.KeyDown += new KeyEventHandler(OnButtonKeyDown);
+
+            while(gameData.ILost == false && gameData.OppLost == false)
+            {
+                gameData = server.GetData();
+                server.SendKeypress(new Keypress(leftKeyPressed, rightKeyPressed));
+            }
+
+
+            //This code is for my local driver
             /*while (gameData.ILost == false && gameData.OppLost == false)
             {
                 gameData = driver.getGameData();
                 PaintGame(gameData);
-            }*/
+            }
             gameData = driver.getGameData();
             PaintGame(gameData);
             
@@ -48,15 +58,13 @@ namespace NetBreakoutPongClient
             PaintGame(gameData);
             gameData = driver.getGameData();
             PaintGame(gameData);
-
+            */
 
 
         }
 
         public void OnButtonKeyDown(object sender, KeyEventArgs e)
         {
-        
-
             if (Keyboard.IsKeyDown(Key.Left))
             {
                 leftKeyPressed = true;
