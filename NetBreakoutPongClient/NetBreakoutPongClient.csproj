@@ -68,6 +68,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="driver.cs" />
     <Compile Include="GameObjects\ClassicPongGameData.cs" />
     <Compile Include="GameObjects\GameServer.cs" />
