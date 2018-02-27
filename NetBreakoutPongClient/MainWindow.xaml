@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NetBreakoutPongClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Net Breakout Pong" Height="650" Width="800" ResizeMode="NoResize" 
+        SizeToContent="WidthAndHeight" Topmost="False" WindowState="Normal" 
+       Icon="./Resources/pong.png">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--This canvas is the gameplay area-->
+        <Canvas Name="gameCanvas" Grid.Column="1" Grid.RowSpan="2" Height="600" Width="500" RenderTransformOrigin="0.5,0.5">
+            <Canvas.Background>
+                <ImageBrush ImageSource="./Resources/background.jpg"/>
+            </Canvas.Background>
+        </Canvas>
+
+        <!--This is Player one's score-->
+        <TextBlock Grid.Column="0"  Height="80" Width="140" FontSize="30" VerticalAlignment="Bottom" Margin="0,0,0,10" TextAlignment="Center">Player 1 <LineBreak/> Score</TextBlock>
+        <TextBlock Name="p1Score" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="40" Width="40" FontSize="30" TextAlignment="Center" >0</TextBlock>
+
+        <!--This is player two's score-->
+        <TextBlock Grid.Column="2" Height="80" Width="140" FontSize="30" VerticalAlignment="Bottom" Margin="0,0,0,10" TextAlignment="Center">Player 2 <LineBreak/> Score</TextBlock>
+        <TextBlock Name="p2Score" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Height="40" Width="40" FontSize="30" TextAlignment="Center" >0</TextBlock>
     </Grid>
 </Window>
