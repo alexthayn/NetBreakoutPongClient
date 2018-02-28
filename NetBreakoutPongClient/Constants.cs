@@ -2,7 +2,7 @@
 {
     public class Constants
     {
-        public const int SCREEN_WIDTH = 800;
+        public const int SCREEN_WIDTH = 500;
         public const int SCREEN_HEIGHT = 600;
 
         public const int PLAYFIELD_WIDTH = SCREEN_WIDTH * 1000;
